@@ -62,7 +62,8 @@ namespace velodyne_pointcloud
     velodyne_rawdata::VPointCloud::Ptr
       outMsg(new velodyne_rawdata::VPointCloud());
     // outMsg's header is a pcl::PCLHeader, convert it before stamp assignment
-    outMsg->header.stamp = pcl_conversions::toPCL(scanMsg->header).stamp;
+    // outMsg->header.stamp = pcl_conversions::toPCL(scanMsg->header).stamp;
+    pcl_conversions::toPCL(ros::Time::now(), outMsg->header.stamp);
     outMsg->header.frame_id = scanMsg->header.frame_id;
     outMsg->height = 1;
 
