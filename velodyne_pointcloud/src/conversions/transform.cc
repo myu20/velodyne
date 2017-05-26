@@ -74,7 +74,8 @@ namespace velodyne_pointcloud
 
     // allocate an output point cloud with same time as raw data
     VPointCloud::Ptr outMsg(new VPointCloud());
-    outMsg->header.stamp = pcl_conversions::toPCL(scanMsg->header).stamp;
+    //outMsg->header.stamp = pcl_conversions::toPCL(scanMsg->header).stamp;
+    pcl_conversions::toPCL(ros::Time::now(), outMsg->header.stamp);
     outMsg->header.frame_id = config_.frame_id;
     outMsg->height = 1;
 
