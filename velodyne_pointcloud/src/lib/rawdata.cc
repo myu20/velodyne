@@ -83,7 +83,7 @@ namespace velodyne_rawdata
 
         // have to use something: grab unit test version as a default
         std::string pkgPath = ros::package::getPath("velodyne_pointcloud");
-        config_.calibrationFile = pkgPath + "/params/64e_utexas.yaml";
+        config_.calibrationFile = pkgPath + "/params/VLP-16.yaml";
       }
 
     ROS_INFO_STREAM("correction angles: " << config_.calibrationFile);
